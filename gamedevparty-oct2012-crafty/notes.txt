@@ -1,0 +1,26 @@
+About Crafty:
+
+- entity / component
+- scenes
+- Canvas / DOM
+- Animation
+- Twoway / Fourway
+- Keyboard
+
+
+Crafty.js en 30 minutes
+
+1. C'est quoi ?
+2. À quoi ça sert ?
+3. Quelques exemples
+4. Comment ça marche
+    a. Le modèle Entity / Component
+    b. Les scenes
+    c. Canvas ou DOM ?
+    d. Les événements (EnterFrame)
+    e. Les animations
+    f. Le clavier
+    g. La souris
+    h. Twoway et Fourway
+5. jQuery et WebGameStub
+6. À vous !
