@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<title>Mozilla, Socorro, ElasticSearch...</title>
+
+<!-- Your Slides -->
+<!-- One section is one slide -->
+
+<section class="no-effect">
+    <!-- This is the first slide -->
+    <h1>Adrian Gaudebert</h1>
+</section>
+
+<section class="no-effect">
+    <h1>Adrian <span class="no">Gaudebert</span></h1>
+</section>
+
+<section>
+    <img src="img/eiffel-tower.jpg" alt="" />
+</section>
+
+<section>
+    <img src="img/camembert-baguette.jpg" alt="" />
+</section>
+
+<section>
+    <img src="img/beret.jpg" alt="" />
+</section>
+
+<!--
+<section>
+    <img src="img/amelie.jpg" alt="" />
+</section>
+-->
+
+<section>
+    <!-- Empty slide -->
+</section>
+
+<!--
+<section>
+    <h1>Nothing</h1>
+</section>
+-->
+
+<section>
+    <h1>Socorro</h1>
+</section>
+
+<section>
+    <h2><a href="https://crash-stats.mozilla.com/">crash-stats.mozilla.com</a></h2>
+</section>
+
+<section>
+    <img src="img/crashes-graph.png" alt="" />
+</section>
+
+<section>
+    <img src="img/firefox-running.jpg" alt="" />
+</section>
+
+<section>
+    <h2>Well, this is embarrassing... </h2>
+</section>
+
+<section>
+    <img src="img/firefox-crashes.jpg" alt="" />
+</section>
+
+<section class="fade-in left">
+    <p>
+        Breakpad
+    </p>
+</section>
+
+<section class="no-effect left">
+    <p>
+        Breakpad
+        --&gt;
+        Crash report
+    </p>
+</section>
+
+<section class="no-effect left">
+    <p>
+        Breakpad
+        --&gt;
+        Crash report
+        --&gt;
+        <img src="img/socorro-simple-6.png" alt="" />
+    </p>
+</section>
+
+<section class="no-effect left">
+    <p>
+        Breakpad
+        --&gt;
+        Crash report
+        --&gt;
+        <img src="img/socorro-simple-5.png" alt="" />
+    </p>
+</section>
+
+<section class="no-effect left">
+    <p>
+        Breakpad
+        --&gt;
+        Crash report
+        --&gt;
+        <img src="img/socorro-simple-4.png" alt="" />
+    </p>
+</section>
+
+<section class="no-effect left">
+    <p>
+        Breakpad
+        --&gt;
+        Crash report
+        --&gt;
+        <img src="img/socorro-simple-3.png" alt="" />
+    </p>
+</section>
+
+<section class="fade-out left">
+    <p>
+        Breakpad
+        --&gt;
+        Crash report
+        --&gt;
+        <img src="img/socorro-simple-2.png" alt="" />
+    </p>
+</section>
+
+<section>
+    <h2>Constraints</h2>
+</section>
+
+<section>
+    <h3>Always available</h3>
+</section>
+
+<section>
+    <h3>Firefox dependant</h3>
+</section>
+
+<section>
+    <h3>A loooot of data</h3>
+</section>
+
+<section>
+    <h3>~ 3.5 millions crashes / day</h3>
+</section>
+
+<section>
+    <img src="img/infinite-servers.jpg" alt="" />
+</section>
+
+<section>
+    <img src="img/turtle-car.jpg" alt="" />
+</section>
+
+<section>
+    <img src="img/lamborghini.jpg" alt="" />
+</section>
+
+<section>
+    <h1>ElasticSearch</h1>
+</section>
+
+<section>
+    <h2><a href="http://www.elasticsearch.org/">elasticsearch.org/</a></h2>
+</section>
+
+<section>
+    <p>NoSQL Database</p>
+</section>
+
+<section>
+    <p>Search oriented</p>
+</section>
+
+<section>
+    <p>"Hello, my name is Billy!"</p>
+</section>
+
+<section>
+    <p>["hello", "my", "name", "is", "billy"]</p>
+</section>
+
+<section>
+    <p>Query DSL</p>
+</section>
+
+<section class="text">
+    <pre style="margin: 50px 100px;">
+{
+    "query": {
+        "terms": {
+            "title": ["internship", "mozilla"]
+        }
+    },
+    "filter": {
+        "and": [
+            {
+                "range": {
+                    "date": {
+                        "from": "2011-04-18",
+                        "to": "2011-09-16"
+                    }
+                }
+            },
+            {
+                "exists": {
+                    "field": "title-image"
+                }
+            }
+        ]
+    }
+}
+    </pre>
+</section>
+
+<section>
+    <p>Facets</p>
+</section>
+
+<section class="text">
+    <pre style="margin: 30% 100px;">
+[
+    { "tags": "internet, mozilla" },
+    { "tags": "internet, school" },
+    { "tags": "internet, mozilla, socorro" },
+    { "tags": "game, life, society, nature" }
+]
+    </pre>
+</section>
+
+<section class="text">
+    <pre style="margin: 200px 100px;">
+{
+    "query": {
+        "match_all": {}
+    },
+    "facets": {
+        "tag": {
+            "terms": {
+                "field": "tags"
+            }
+        }
+    }
+}
+    </pre>
+</section>
+
+<section class="text right">
+    <ul style="margin: 150px 300px; list-style-type: none;">
+        <li>"internet": 3</li>
+        <li>"mozilla": 2</li>
+        <li>"school": 1</li>
+        <li>"socorro": 1</li>
+        <li>...</li>
+    </ul>
+</section>
+
+<section>
+    <div>
+        <img src="img/combo.jpg" alt="" />
+        <h1 style="margin-top: -50%; color: black; ">C-C-C-Combo?</h1>
+    </div>
+</section>
+
+<section class="fade-in">
+    <img src="img/socorro-simple-2.png" alt="" />
+</section>
+
+<section class="fade-out">
+    <img src="img/socorro-simple-1.png" alt="" />
+</section>
+
+<section>
+    <p>Search</p>
+</section>
+
+<section>
+    <img src="img/search.png" alt="" />
+</section>
+
+<section>
+    <img src="img/socorro-simple-1.png" alt="" />
+</section>
+
+<section>
+    <img src="img/searchapi-en.png" alt="" />
+</section>
+
+<section>
+    <p>Documentation first</p>
+</section>
+
+<section>
+    <img src="img/middleware-api.png" alt="" />
+</section>
+
+<section>
+    <div>
+        <img src="img/fuuu.jpg" alt="" style="margin-top: -100px;" />
+        <h1 style="margin-top: -50%;">Problems</h1>
+    </div>
+</section>
+
+<section>
+    <h2>Aggregation</h2>
+</section>
+
+<section>
+    <img src="img/crashes.png" alt="" />
+</section>
+
+<section>
+    <img src="img/signatures.png" alt="" />
+</section>
+
+<section>
+    <h2>Performances</h2>
+</section>
+
+<section>
+    <p>1,000</p>
+</section>
+
+<section>
+    <h1>Conclusion</h1>
+</section>
+
+<section>
+    <h2>So, ElasticSearch?</h2>
+</section>
+
+<section>
+    <h1>Questions?</h1>
+</section>
+
+<section>
+    <div>
+        <img src="img/merci.jpg" alt="" style="margin-top: -100px;" />
+        <h1 style="margin-top: -50%;">Merci ! </h1>
+    </div>
+</section>
+
+<section>
+    <img src="img/interns.jpg" alt="" />
+</section>
+
+<section>
+    <img src="img/webdevteam.jpg" alt="" />
+</section>
+
+<!-- Your Style -->
+<!-- Define the style of you presentation -->
+
+<!-- Maybe a font from http://www.google.com/webfonts ? -->
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+
+<style>
+html { background-color: black; }
+body {
+    background-color: black;
+    color: white;
+}
+/* A section is a slide. It's size is 800x600, and this will never change */
+section {
+    /* The font from Google */
+    font-family: 'Oswald', arial, serif;
+    font-size: 2em;
+    line-height: 600px;
+    text-align: center;
+}
+section.text {
+    line-height: 1.5em;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+h1 {
+    font-size: 80px;
+}
+ul {
+    margin-left: 200px;
+}
+a { color: #FF0066; } a:hover {text-decoration: underline;}
+footer { position: absolute; bottom: 50px; right: 50px; }
+pre {
+    font-family: Courier, sans-serif;
+    font-size: 16px;
+    line-height: 1.2em;
+    text-align: left;
+}
+
+/* Transition effect */
+/* Feel free to change the transition effect for original
+ animations. See here:
+ https://developer.mozilla.org/en/CSS/CSS_transitions
+ How to use CSS3 Transitions: */
+section {
+    -moz-transition: left 400ms linear 0s;
+    -webkit-transition: left 400ms linear 0s;
+    -ms-transition: left 400ms linear 0s;
+    transition: left 400ms linear 0s;
+}
+section.no-effect {
+    -moz-transition: none;
+    -webkit-transition: none;
+    -ms-transition: none;
+    transition: none;
+}
+/*section.from-top,
+section.from-bottom {
+    -moz-transition: top 200ms linear 0s;
+    -webkit-transition: top 200ms linear 0s;
+    -ms-transition: top 200ms linear 0s;
+    transition: top 200ms linear 0s;
+}*/
+
+/* Before */
+section { left: -150%; }
+/*section.from-bottom { left: 0; top: -100%; }
+section.from-top { left: 0; top: +100%; }*/
+/* Now */
+section[aria-selected] { left: 0; }
+/*section[aria-selected].from-bottom { top: 0; }
+section[aria-selected].from-top { top: 0; }*/
+/* After */
+section[aria-selected] ~ section { left: +100%; }
+/*section[aria-selected] ~ section.from-bottom { left: 0; top: +100% }
+section[aria-selected] ~ section.from-top { left: 0; top: -100% }*/
+/* Images */
+img {
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/* New effects */
+.fade-in {
+    -moz-transition: opacity 800ms linear 400ms;
+    -webkit-transition: opacity 800ms linear 400ms;
+    -ms-transition: opacity 800ms linear 400ms;
+    transition: opacity 800ms linear 400ms;
+    opacity: 1.0;
+}
+section[aria-selected].fade-in {
+    opacity: 1.0;
+}
+section[aria-selected] ~ section.fade-in {
+    opacity: 0.0;
+}
+.no-fade-out {
+    -moz-transition: opacity 800ms linear 400ms;
+    -webkit-transition: opacity 800ms linear 400ms;
+    -ms-transition: opacity 800ms linear 400ms;
+    transition: opacity 800ms linear 400ms;
+    opacity: 1.0;
+    left: 0;
+}
+.fade-out {
+    -moz-transition: opacity 400ms linear 0ms;
+    -webkit-transition: opacity 400ms linear 0ms;
+    -ms-transition: opacity 400ms linear 0ms;
+    transition: opacity 400ms linear 0ms;
+    opacity: 0;
+    left: 0;
+}
+section[aria-selected].fade-out {
+    opacity: 1.0;
+}
+section[aria-selected] ~ section.fade-out {
+    opacity: 1.0;
+}
+section.fade-out + section[aria-selected] {
+    -moz-transition-delay: 400ms;
+    -webkit-transition-delay: 400ms;
+    -ms-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+
+/* Personnal styles */
+.no {
+    color: red;
+    text-decoration: line-through;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+</style>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.text-effects.js"></script>
+
+<script>
+function executeUserEffects() {
+    setTimeout(function() {
+        $("section[aria-selected].text-type h2").show().typewriter(30);
+        $("section[aria-selected]").not(".no-fade-out").each(function() {
+            $(".no-fade-out").removeClass("no-fade-out");
+        });
+    }, 400);
+    $("section[!aria-selected].text-type h2").hide();
+}
+
+$(document).ready(function () {
+    $("section.text-type h2").hide();
+});
+</script>
+
+
+<!-- {{{{ *****************  DZSlides CORE 2.0b1 *************************** -->
+<!-- *********************************************************************** -->
+<!-- *********************************************************************** -->
+<!-- *********************************************************************** -->
+<!-- *********************************************************************** -->
+
+<!-- This block of code is not supposed to be edited, but if you want to change the behavior of the slides, feel free to hack it ;) -->
+
+<!-- Default Style -->
+<style>
+  * { margin: 0; padding: 0; }
+  details {display: none;}
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+  }
+  html {
+    overflow: hidden;
+  }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  section[aria-selected] { pointer-events: auto;}
+  body {display: none}
+  body.loaded {display: block}
+</style>
+
+<script>
+  var friendWindows = [];
+  var idx = 1;
+  var slides;
+
+  /* main() */
+
+
+//  window.onload = function() {
+  $(document).ready(function() {
+    slides = document.querySelectorAll("body > section");
+    onhashchange();
+    setSlide();
+    document.body.className = "loaded";
+    setupTouchEvents();
+    onresize();
+  }
+  );
+
+  /* Handle keys */
+
+  window.onkeydown = function(e) {
+    // Don't intercept keyboard shortcuts
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
+      return;
+    }
+    if ( e.keyCode == 37 // left arrow
+      || e.keyCode == 38 // up arrow
+      || e.keyCode == 33 // page up
+    ) {
+      e.preventDefault();
+      back();
+    }
+    if ( e.keyCode == 39 // right arrow
+      || e.keyCode == 40 // down arrow
+      || e.keyCode == 34 // page down
+    ) {
+      e.preventDefault();
+      forward();
+    }
+
+    if ( e.keyCode == 32) { // space
+        e.preventDefault();
+        toggleContent();
+    }
+  }
+
+  /* Touch Events */
+
+  function setupTouchEvents() {
+    var orgX, newX;
+    var tracking = false;
+
+    var body = document.body;
+    body.addEventListener("touchstart", start, false);
+    body.addEventListener("touchmove", move, false);
+
+    function start(e) {
+      e.preventDefault();
+      tracking = true;
+      orgX = e.changedTouches[0].pageX;
+    }
+
+    function move(e) {
+      if (!tracking) return;
+      newX = e.changedTouches[0].pageX;
+      if (orgX - newX > 100) {
+        tracking = false;
+        forward();
+      } else {
+        if (orgX - newX < -100) {
+          tracking = false;
+          back();
+        }
+      }
+    }
+  }
+
+  /* Adapt the size of the slides to the window */
+
+  window.onresize = function() {
+    var sx = document.body.clientWidth / window.innerWidth;
+    var sy = document.body.clientHeight / window.innerHeight;
+    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+    document.body.style.MozTransform = transform;
+    document.body.style.WebkitTransform = transform;
+    document.body.style.OTransform = transform;
+    document.body.style.msTransform = transform;
+    document.body.style.transform = transform;
+  }
+  function getDetails(idx) {
+    var s = document.querySelector("section:nth-of-type("+ idx +")");
+    var d = s.querySelector("details");
+    return d?d.innerHTML:"";
+  }
+  window.onmessage = function(e) {
+    msg = e.data;
+    win = e.source;
+    if (msg === "register") {
+      friendWindows.push(win);
+      win.postMessage(JSON.stringify({method: "registered", title: document.title, count: slides.length}), "*");
+      win.postMessage(JSON.stringify({method: "newslide", details: getDetails(idx), idx: idx}), "*");
+      return;
+    }
+    if (msg === "back") back();
+    if (msg === "forward") forward();
+    if (msg === "toggleContent") toggleContent();
+    // setSlide(42)
+    var r = /setSlide\((\d+)\)/.exec(msg);
+    if (r) {
+        idx = r[1];
+        setSlide();
+    }
+  }
+
+  /* If a Video is present in this new slide, play it.
+     If a Video is present in the previous slide, stop it. */
+
+  function toggleContent() {
+    var s = document.querySelector("section[aria-selected]");
+    if (s) {
+        var video = s.querySelector("video");
+        if (video) {
+            if (video.ended || video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+    }
+  }
+
+  /* If the user change the slide number in the URL bar, jump
+     to this slide. */
+
+  window.onhashchange = function(e) {
+    var newidx = ~~window.location.hash.split("#")[1];
+    if (!newidx) newidx = 1;
+    if (newidx == idx) return;
+    idx = newidx;
+    setSlide();
+  }
+
+  /* Slide controls */
+
+  function back() {
+    if (idx == 1) return;
+    idx--;
+    setSlide();
+  }
+  function forward() {
+    if (idx >= slides.length) return;
+    idx++;
+    setSlide();
+  }
+  function setSlide() {
+    var old = document.querySelector("section[aria-selected]");
+    var next = document.querySelector("section:nth-of-type("+ idx +")");
+    if (old) {
+      old.removeAttribute("aria-selected");
+      var video = old.querySelector("video");
+      if (video) { video.pause(); }
+    }
+    if (next) {
+      next.setAttribute("aria-selected", "true");
+      executeUserEffects();
+      var video = next.querySelector("video");
+      if (video) { video.play(); }
+    } else {
+      console.warn("No such slide: " + idx);
+      idx = 0;
+      for (var i = 0; i < slides.length; i++) {
+          if (slides[i].hasAttribute("aria-selected")) {
+              idx = i + 1;
+          }
+      }
+    }
+    window.location.hash = idx;
+    for (var i = 0; i < friendWindows.length; i++) {
+        friendWindows[i].postMessage(JSON.stringify({method: "newslide", details: getDetails(idx), idx: idx}), "*");
+    }
+  }
+</script>
+<!-- vim: set fdm=marker: }}} -->
