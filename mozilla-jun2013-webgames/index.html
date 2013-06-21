@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Faire des jeux Web</title>
+
+		<meta name="description" content="Présentation sur les jeux Web pour la communauté Mozilla Francophone">
+		<meta name="author" content="Adrian Gaudebert, Nicolas Silva">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Faire des jeux Web</h1>
+					<h3>Les jeux, c'est bien, faites-en</h3>
+					<p>
+						<small>Par <a href="http://adrian.gaudebert.fr">Adrian</a> et <a href="http://twitter.com/nicalsilva">Nical</a></small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Quelques exemples</h2>
+						<img class="no-style" src="img/arrow-down.png">
+					</section>
+					<section>
+						<h3>Browser Quest</h3>
+						<img src="img/games/browser-quest.jpg">
+						<a href="http://browserquest.mozilla.org/">browserquest.mozilla.org/</a>
+					</section>
+					<section>
+						<h3>BananaBread</h3>
+						<img src="img/games/banana-bread.jpg">
+						<a href="https://developer.mozilla.org/en-US/demos/detail/bananabread">developer.mozilla.org/en-US/demos/detail/bananabread</a>
+					</section>
+					<section>
+						<h3>Epic Citadel</h3>
+						<img src="img/games/epic-citadel.jpg">
+						<a href="http://www.unrealengine.com/html5/">unrealengine.com/html5/</a>
+					</section>
+					<section>
+						<h3>Et bien d'autres...</h3>
+						<img src="img/games/others.png">
+					</section>
+				</section>
+
+				<section>
+					<h2>Quelles technologies ?</h2>
+				</section>
+
+				<section>
+					<h3>Canvas</h3>
+					<ul>
+						<li class="fragment roll-in">Pour l'affichage</li>
+						<li class="fragment roll-in">2D</li>
+						<li class="fragment roll-in">
+							Adapté pour :
+							<ul>
+								<li class="fragment roll-in">beaucoup d'images</li>
+								<li class="fragment roll-in">dessin de formes</li>
+								<li class="fragment roll-in">animations</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>WebGL</h3>
+					<ul>
+						<li class="fragment roll-in">Pour l'affichage</li>
+						<li class="fragment roll-in">3D</li>
+						<li class="fragment roll-in">
+							Adapté pour :
+							<ul>
+								<li class="fragment roll-in">la 3D</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>DOM</h3>
+					<ul>
+						<li class="fragment roll-in">Pour l'affichage</li>
+						<li class="fragment roll-in">2D</li>
+						<li class="fragment roll-in">
+							Adapté pour :
+							<ul>
+								<li class="fragment roll-in">peu d'images ou d'éléments</li>
+								<li class="fragment roll-in">interfaces</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>SVG</h3>
+					<ul>
+						<li class="fragment roll-in">Pour l'affichage</li>
+						<li class="fragment roll-in">2D</li>
+						<li class="fragment roll-in">
+							Adapté pour :
+							<ul>
+								<li class="fragment roll-in">éléments vectoriels</li>
+								<li class="fragment roll-in">filtres</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Emscriptem</h3>
+					<ul>
+						<li class="fragment roll-in">Compile du C++ vers JavaScript</li>
+						<li class="fragment roll-in">Bonnes performances (<a href="#/1">voir les exemples</a>)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>WebSockets</h3>
+					<ul>
+						<li class="fragment roll-in">Communication bi-directionnelle en temps réel</li>
+						<li class="fragment roll-in">Client / Serveur</li>
+						<li class="fragment roll-in">Indispensable pour le multijoueurs</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>WebRTC</h3>
+					<ul>
+						<li class="fragment roll-in">Communication en pair à pair</li>
+						<li class="fragment roll-in">Permet l'échange de données, vidéo, voix, fichiers... </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Challenges</h2>
+				</section>
+
+				<section>
+					<h3>Contraintes : le réseau</h3>
+					<p>
+						Attention au temps de téléchargement des ressources
+					</p>
+					<ul>
+						<li class="fragment roll-in">
+							Optimiser les images et les sons
+						</li>
+						<li class="fragment roll-in">
+							Penser au cache (et aux impacts du cache pendant le développement)
+						</li>
+						<li class="fragment roll-in">
+							Penser aux réseaux "faibles" (Edge, 3G... )
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Contraintes : les plate-formes</h3>
+					<p>
+						Le Web est la plate-forme
+					</p>
+					<p class="fragment roll-in">
+						<strong>MAIS</strong>
+					</p>
+					<ul>
+						<li class="fragment roll-in">
+							Taille des écrans différentes
+						</li>
+						<li class="fragment roll-in">
+							Souris + clavier VS tactile
+						</li>
+					</ul>
+					<img src="img/responsive.png" class="no-style fragment roll-in" style="margin: auto; display: block;">
+				</section>
+
+				<section>
+					<h3>Performances</h3>
+					<p>Utiliser le <em>profiler</em></p>
+					<img src="img/firefox-profiler.png">
+				</section>
+
+				<section>
+					<h3>Performances</h3>
+					<p>Attention &agrave; l'overdraw</p>
+					<ul>
+						<li class="fragment roll-in">
+							Dessiner coute cher
+						</li>
+						<li class="fragment roll-in">
+							Minimiser les opérations de dessin ou de <em>scale</em>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Performances</h3>
+					<p>En JavaScript, éviter :</p>
+					<code class="fragment roll-in"><span class="blue">try</span></code><!--
+					--><code class="fragment roll-in">, <span class="blue">with</span></code><!--
+					--><code class="fragment roll-in">, <span class="blue">eval</span></code>
+				</section>
+
+				<section>
+					<h3>Méthodologie : la roue</h3>
+					<p><em>Il ne faut pas la réinventer !</em></p>
+					<ul>
+						<li class="fragment roll-in">
+							Utiliser les outils &agrave; disposition
+							<ul>
+								<li><a href="#/18">Cf. les liens</a></li>
+							</ul>
+						</li>
+						<li class="fragment roll-in">Simplifier la création de contenu</li>
+						<li class="fragment roll-in">Les artistes doivent pouvoir s'exprimer !</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Méthodologie : itérations</h3>
+					<p>Minimiser les temps d'itération</p>
+					<ul>
+						<li class="fragment roll-in">Avoir un produit testable le plus t&ocirc;t possible</li>
+						<li class="fragment roll-in">Puis faire des améliorations progressives</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Game Over</h1>
+				</section>
+
+				<section>
+					<p>Slides : <a href="http://lqbs.fr/slides/webgames/">lqbs.fr/slides/webgames/</a></p>
+					<p>Ressources : <a href="">&Agrave; venir sur le wiki mozfr</a></p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: 'beige', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
