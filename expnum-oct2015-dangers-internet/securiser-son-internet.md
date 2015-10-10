@@ -7,22 +7,21 @@ nous vous aiderons à sécuriser vos données et à protéger votre vie sur le n
 
 ## Plan
 
- * le navigateur, point d'entrée sur le Web
- * vie privée et tracking
-    * [extension] uBlock Origin
- * anti-virus et firewall
- * apprendre ce qu'est une URL
-    * [extension] afficher l'URL complète
- * détecter une connexion sécurisée (HTTPS)
+* problématique
+  * exemples de problèmes sur le net
+* Internet et Web
+* le navigateur, point d'entrée sur le Web
+  * Firefox FTW
+* sécurité
+  * apprendre ce qu'est une URL
+  * détecter une connexion sécurisée (HTTPS)
     * [extension] HTTPS everywhere
- * les règles pour créer un bon mot de passe
- * le phishing
+  * les règles pour créer un bon mot de passe
+* arnaques en ligne
+  * SPAM
+  * phishing
     * Viane de Danssay
- * 2FA
-
-## Slides
-
-Titre
-    titre
-    nom
-
+  * [extension] WOT
+* vie privée
+  * [extension] Lightbeam
+  * [extension] uBlock Origin
